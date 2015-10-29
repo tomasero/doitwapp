@@ -1,0 +1,52 @@
+body {
+    margin: 0px;
+    font-family: 'Lato', Arial;
+    color: #2E3233;
+/*    background: #E2E3DF;*/
+    background: rgba(0,0,0,0.1);
+}
+#doit {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    background-color: rgba(128, 0, 128, 0.4);
+    text-align: center;
+    line-height: 150px;
+    font-size: 30px;
+    margin: 0px auto;
+    transition: 0.3s;
+}
+
+#doit:hover {
+    background-color: rgba(128, 0, 128, 0.8);
+}
+
+#container {
+    width: 375px;
+    height: 667px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: calc( -667px / 2);
+    margin-left: calc( -375px / 2);
+}
+
+select {
+    width: 150px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+
+#message {
+    display: block;
+    margin: 30px auto;
+    font-size: 20px;
+}
+
+#person-select {
+    display: block;
+    margin: 0px auto;
+    font-size: 20px;
+}
