@@ -39,6 +39,7 @@ body {
 }
 
 #person-select {
+    margin-top: 200px;
     display: block;
     margin: 0px auto;
     font-size: 50px;
