@@ -21,15 +21,22 @@ var numbers = {
 
 }
 
-function sendMessage( to, message  ) {
-  client.messages.create({ 
+function sendMessage( to, message, res ) {
+  client.messages.create(
+    { 
       to: numbers[to.toLowerCase()], 
       from: '+15109008110',
       body: message,    
-     }, function(err, message) { 
-      console.log(message.sid); 
-     }
-  );
+    }, function(err, message) {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        console.log("success");
+        res.status(200).send({
+        message: 'Tap successful!'
+      });
+    }
+  });
 }
 
 
@@ -38,16 +45,7 @@ router.post('/sendMessage', function (req, res) {
   var person = req.body.person;
   var message = req.body.message;
   console.log( person + message );
-  sendMessage( person, message, function ( err, msg  ) {
-    console.log(err);
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.send({
-        message: 'Tap successful!'
-      });
-    }
-  });
+  sendMessage( person, message, res);
 });
 
 module.exports = router;
