@@ -5,7 +5,7 @@ $( document ).ready ( function () {
         var message = $ ( '#message' ).val().trim();
         console.log( person + " " + message );
         $.ajax({
-            url: 'http://localhost:3000/sendMessage',
+            url: 'http://doitwapp.herokuapp.com/sendMessage',
             method: 'POST',
             dataType: 'json',
             data: {
